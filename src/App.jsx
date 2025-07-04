@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
@@ -19,6 +20,7 @@ function App() {
   });
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation(); // <== Important pour AnimatePresence
 
   const toggleTheme = () => {
     const newMode = !isDarkMode;
@@ -36,7 +38,7 @@ function App() {
         onMenuClick={toggleSidebar}
       />
 
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {sidebarOpen && (
           <Sidebar
             isDarkMode={isDarkMode}
@@ -45,14 +47,20 @@ function App() {
         )}
       </AnimatePresence>
 
+      {/* 🔥 ScrollToTop pour remonter en haut à chaque route */}
+      <ScrollToTop />
+
       <main className="content">
-        <Routes>
-          <Route path="/" element={<Home isDarkMode={isDarkMode} />} />
-          <Route path="/a-propos" element={<About isDarkMode={isDarkMode} />} />
-          <Route path="/produits" element={<Produits isDarkMode={isDarkMode} />} />
-          <Route path="/contact" element={<Contact isDarkMode={isDarkMode} />} />
-          <Route path="/produit/:id" element={<ProductDetail isDarkMode={isDarkMode} />} />
-        </Routes>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home isDarkMode={isDarkMode} />} />
+            <Route path="/a-propos" element={<About isDarkMode={isDarkMode} />} />
+            <Route path="/produits" element={<Produits isDarkMode={isDarkMode} />} />
+            <Route path="/contact" element={<Contact isDarkMode={isDarkMode} />} />
+            <Route path="/produit/:id" element={<ProductDetail isDarkMode={isDarkMode} />} />
+            <Route path="*" element={<Home isDarkMode={isDarkMode} />} />
+          </Routes>
+        </AnimatePresence>
       </main>
 
       <Footer isDarkMode={isDarkMode} />

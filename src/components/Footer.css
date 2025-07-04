@@ -1,3 +1,4 @@
+/* ====== FOOTER WRAPPER ====== */
 .footer {
   padding: 3rem 2rem;
   font-family: Arial, sans-serif;
@@ -16,28 +17,25 @@
   border-top: 2px solid #334155;
 }
 
+/* ====== MAIN CONTENT FLEX ====== */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 2rem;
 }
 
-/* =====================
-   SECTION LOGO & CONTACT
-===================== */
+/* ====== SECTION LOGO & SOCIAL ====== */
 .footer-section.logo-social {
-  flex: 1 1 280px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
+  flex: 1 1 260px;
   text-align: center;
 }
 
 .slogan {
   font-weight: bold;
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .social-icons {
@@ -57,54 +55,50 @@
   color: #facc15;
 }
 
-/* =====================
-   CONTACT
-===================== */
-.footer-section.logo-social .footer-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
+/* ====== SECTION CONTACT ====== */
+.footer-section.contact-us {
+  flex: 1 1 220px;
 }
 
-.footer-section.logo-social .footer-section h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
+.footer-section.contact-us h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
-.footer-section.logo-social .footer-section p {
+.footer-section.contact-us p {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin: 0.4rem 0;
   font-size: 0.95rem;
-  margin: 0;
-}
-.footer-section.contact-us {
-  text-align: center;
 }
 
-/* =====================
-   NAVIGATION
-===================== */
+.footer-section.contact-us svg {
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* ====== SECTION NAVIGATION ====== */
 .footer-section.links {
-  flex: 1 1 250px;
-  text-align: center;
+  flex: 1 1 200px;
 }
 
 .centered-title {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .nav-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 .nav-link {
@@ -118,13 +112,10 @@
   color: #0ea5e9;
 }
 
-/* =====================
-   À PROPOS
-===================== */
+/* ====== SECTION À PROPOS ====== */
 .about-site {
-  flex: 1 1 300px;
-  padding: 1rem;
-  text-align: center;
+  flex: 1 1 280px;
+  text-align: left;
 }
 
 .about-site h4 {
@@ -137,12 +128,10 @@
   font-size: 0.95rem;
   line-height: 1.5;
   max-width: 350px;
-  margin: 0 auto;
+  margin: 0;
 }
 
-/* =====================
-   RESPONSIVE
-===================== */
+/* ====== RESPONSIVE MOBILE ====== */
 @media screen and (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -150,11 +139,22 @@
     text-align: center;
   }
 
-  .nav-links {
-    justify-content: center;
+  .footer-section,
+  .about-site {
+    text-align: center;
+    width: 100%;
   }
 
-  .footer-section.logo-social .footer-section {
-    align-items: center;
+  .footer-section.contact-us h3,
+  .centered-title,
+  .about-site h4 {
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
   }
 }

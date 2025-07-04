@@ -31,11 +31,12 @@ const Header = ({ isDarkMode, toggleTheme, onMenuClick }) => {
       </ul>
 
       <img
-        src={isDarkMode ? moonIcon : sunIcon}
+        src={isDarkMode ? sunIcon : moonIcon} // ✅ maintenant c’est logique
         alt="Toggle theme"
         className="toggle-icon"
         onClick={toggleTheme}
       />
+
 
       <button className="burger mobile-only" onClick={onMenuClick}>
         <img src={menuIcon} alt="Menu" className="custom-menu-icon" />

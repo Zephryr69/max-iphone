@@ -22,6 +22,14 @@ function Home({ isDarkMode }) {
       }
     );
 
+    const productIds = {
+      1: "1",
+      2: "3",
+      3: "5",
+      4: "4",
+      5: "9"
+    };
+
     const imagesEntries = Object.entries(imagesImport)
       .map(([path, module]) => {
         const match = path.match(/Image(\d+)\.jpeg$/);
@@ -41,7 +49,11 @@ function Home({ isDarkMode }) {
 
     const combined = imagesEntries.map(({ index, src }) => {
       const txt = textsEntries.find((t) => t.index === index);
-      return { src, text: txt?.text || "" };
+      return {
+        src,
+        text: txt?.text || "",
+        id: productIds[index] || `${index}`
+      };
     });
 
     setSlides(combined);
@@ -69,6 +81,7 @@ function Home({ isDarkMode }) {
       <section className="why-choose">
         <h2>Pourquoi nous choisir ?</h2>
       </section>
+
       <section className="features">
         <div className="feature-card">
           <h3>✅ Qualité garantie</h3>
@@ -83,34 +96,60 @@ function Home({ isDarkMode }) {
           <p>Les meilleures offres du marché sur des modèles récents.</p>
         </div>
       </section>
+
       <section className="featured-products">
-  <h2>Produits phares</h2>
-  {slides.length === 0 ? (
-    <p>Chargement...</p>
-  ) : (
-    <div className="carouselContainer">
-      <div className="carouselSlide">
-        <img
-          src={slides[current]?.src}
-          alt={`Slide ${current + 1}`}
-          loading="lazy"
-        />
-        <div className="carouselText">{slides[current]?.text}</div>
-      </div>
+        <h2>Produits phares</h2>
+        {slides.length === 0 ? (
+          <p>Chargement...</p>
+        ) : (
+          <div className="carouselContainer">
+            {/* Flèche précédente */}
+            <button
+              className="carouselArrow prev"
+              onClick={() => setCurrent((prev) => (prev - 1 + slides.length) % slides.length)}
+              aria-label="Slide précédente"
+            >
+              ‹
+            </button>
 
-      <div className="carouselDots">
-        {slides.map((_, i) => (
-          <span
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`dot ${i === current ? "activeDot" : ""}`}
-          ></span>
-        ))}
-      </div>
-    </div>
-  )}
-</section>
+            <div className="carouselSlide">
+              <img
+                src={slides[current]?.src}
+                alt={`Slide ${current + 1}`}
+                loading="lazy"
+              />
+              <div className="carouselText">
+                <p>{slides[current]?.text}</p>
+                <Link
+                  to={`/produit/${slides[current]?.id}`}
+                  className="cta-button"
+                >
+                  Voir le produit
+                </Link>
+              </div>
+            </div>
 
+            {/* Flèche suivante */}
+            <button
+              className="carouselArrow next"
+              onClick={() => setCurrent((prev) => (prev + 1) % slides.length)}
+              aria-label="Slide suivante"
+            >
+              ›
+            </button>
+
+            <div className="carouselDots">
+              {slides.map((_, i) => (
+                <span
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`dot ${i === current ? "activeDot" : ""}`}
+                ></span>
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
     </div>
   );
 }
