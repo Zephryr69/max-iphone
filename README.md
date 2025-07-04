@@ -1,12 +1,22 @@
-# React + Vite
+# max-iphone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ce projet est une boutique d’iPhones (neufs et reconditionnés) construite avec React + Vite.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack technique
 
-## Expanding the ESLint configuration
+- ⚛️ React 18
+- ⚡ Vite pour le bundling ultra-rapide
+- 🎨 CSS custom avec support mode sombre/clair
+- 📱 Design responsive et animations
+- 🔧 ESLint intégré
+- 🌐 Déploiement GitHub Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Développement local
+
+```bash
+npm install
+npm run dev
