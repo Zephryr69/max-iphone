@@ -6,6 +6,7 @@
   color: #222;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: background 0.4s ease, color 0.4s ease;
+  box-sizing: border-box;
 }
 
 .about-page.dark {
@@ -19,6 +20,8 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
+  padding: 0 1rem;
+  word-wrap: break-word;
 }
 
 /* Intro */
@@ -29,6 +32,7 @@
   text-align: center;
   line-height: 1.6;
   color: inherit;
+  padding: 0 1rem;
 }
 
 /* Sections générales */
@@ -40,6 +44,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
   transition: background 0.4s ease;
+  box-sizing: border-box;
 }
 
 .about-page.dark .about-section {
@@ -69,6 +74,7 @@
   gap: 1rem;
   justify-content: center;
   margin-top: 1rem;
+  padding: 0 1rem;
 }
 
 .about-values li {
@@ -79,6 +85,10 @@
   font-size: 0.95rem;
   font-weight: 500;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  flex: 1 1 auto;
+  max-width: 150px;
+  text-align: center;
+  word-break: break-word;
 }
 
 .about-page.dark .about-values li {
@@ -90,6 +100,7 @@
 .about-contact {
   margin-top: 3rem;
   text-align: center;
+  padding: 0 1rem;
 }
 
 .whatsapp-btn {
@@ -114,12 +125,36 @@
     font-size: 2rem;
   }
 
+  .about-intro {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
   .about-section {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 1rem;
+    max-width: 100%;
+  }
+
+  .about-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+  }
+
+  .about-values {
+    gap: 0.7rem;
   }
 
   .about-values li {
     font-size: 0.85rem;
     padding: 0.5rem 0.9rem;
+    max-width: 120px;
+  }
+
+  .about-contact {
+    margin-top: 2rem;
   }
 }
