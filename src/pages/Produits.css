@@ -1,0 +1,150 @@
+.produits-page {
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, #fafafa, #ffffff);
+  color: #222;
+  transition: all 0.4s ease-in-out;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.produits-page.dark {
+  background: linear-gradient(to bottom, #121212, #1e1e1e);
+  color: #f5f5f5;
+}
+
+/* Titres */
+.produits-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+/* Texte d’intro */
+.produits-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  line-height: 1.6;
+  color: inherit;
+}
+
+/* Grille de produits */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* Carte produit */
+.product-card {
+  background: linear-gradient(to top right, #fff7e6, #ffffff);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  color: #222;
+}
+
+.produits-page.dark .product-card {
+  background: linear-gradient(to bottom right, #2a2a2a, #1b1b1b);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
+  color: #f5f5f5;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.produits-page.dark .product-card:hover {
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.5);
+}
+
+/* Image produit */
+.product-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.produits-page.dark .product-img {
+  background: #222;
+}
+
+/* Nom du produit */
+.product-card h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Description produit */
+.product-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.produits-page.dark .product-card p {
+  color: #ccc;
+}
+
+/* Prix */
+.prix {
+  font-weight: bold;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  color: #e67e22;
+}
+
+.produits-page.dark .prix {
+  color: #f5a623;
+}
+
+/* Bouton "Voir les détails" */
+.voir-btn {
+  background-color: #ff9900;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.voir-btn:hover {
+  background-color: #e68a00;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    padding: 1.2rem;
+  }
+
+  .produits-title {
+    font-size: 2rem;
+  }
+
+  .produits-intro {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+}
