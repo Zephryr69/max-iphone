@@ -1,5 +1,16 @@
 <!DOCTYPE html>
-<!-- 404.html -->
-<script>
-  location.replace("/max-iphone/");
-</script>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <script type="text/javascript">
+      // Sauvegarde le chemin original
+      sessionStorage.setItem("redirect", location.pathname + location.search);
+      // Redirige vers la racine
+      location.replace("/max-iphone/");
+    </script>
+  </head>
+  <body>
+    <p>Redirection...</p>
+  </body>
+</html>

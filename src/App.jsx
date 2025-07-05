@@ -1,7 +1,7 @@
+import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
-import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Produits from "./pages/Produits";
@@ -10,8 +10,9 @@ import ProductDetail from "./pages/ProductDetail";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ScrollToTopButton from "./components/ScrollToTopButton";
 import Sidebar from "./components/Sidebar";
+import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -20,7 +21,16 @@ function App() {
   });
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const location = useLocation(); // <== Important pour AnimatePresence
+  const location = useLocation();
+
+  // Restaure l'URL sauvegardée par 404.html (utile sur GitHub Pages)
+  useEffect(() => {
+    const redirect = sessionStorage.getItem("redirect");
+    if (redirect) {
+      sessionStorage.removeItem("redirect");
+      window.history.replaceState(null, "", redirect);
+    }
+  }, []);
 
   const toggleTheme = () => {
     const newMode = !isDarkMode;
@@ -47,7 +57,6 @@ function App() {
         )}
       </AnimatePresence>
 
-      {/* 🔥 ScrollToTop pour remonter en haut à chaque route */}
       <ScrollToTop />
 
       <main className="content">

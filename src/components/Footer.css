@@ -140,9 +140,14 @@
   }
 
   .footer-section,
+  .footer-section.logo-social,
+  .footer-section.contact-us,
+  .footer-section.links,
   .about-site {
-    text-align: center;
     width: 100%;
+    max-width: 400px;
+    margin-bottom: 2rem;
+    text-align: center;
   }
 
   .footer-section.contact-us h3,
@@ -151,10 +156,18 @@
     text-align: center;
   }
 
+  .footer-section.contact-us p,
+  .about-text {
+    justify-content: center;
+  }
+.about-text {
+    text-align: center;
+    margin: 0 auto;
+  }
   .nav-links {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.2rem;
+    gap: 1rem;
   }
 }
