@@ -1,0 +1,21 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Thème clair */
+.containner.light {
+  background-color: #ffffff;
+  color: #222;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Thème sombre */
+.containner.dark {
+  background-color: #121212;
+  color: #f5f5f5;
+  transition: background 0.3s ease, color 0.3s ease;
+}

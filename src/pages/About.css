@@ -1,0 +1,160 @@
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  background: #fff;
+  color: #222;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
+  box-sizing: border-box;
+}
+
+.about-page.dark {
+  background: linear-gradient(to bottom, #121212, #0e0e0e);
+  color: #f5f5f5;
+}
+
+/* Titre principal */
+.about-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  word-wrap: break-word;
+}
+
+/* Intro */
+.about-intro {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  text-align: center;
+  line-height: 1.6;
+  color: inherit;
+  padding: 0 1rem;
+}
+
+/* Sections générales */
+.about-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: background 0.4s ease;
+  box-sizing: border-box;
+}
+
+.about-page.dark .about-section {
+  background: #222;
+}
+
+.about-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: inherit;
+}
+
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+  color: inherit;
+}
+
+/* Liste des valeurs */
+.about-values {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+.about-values li {
+  background: #fff3cd;
+  color: #856404;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  flex: 1 1 auto;
+  max-width: 150px;
+  text-align: center;
+  word-break: break-word;
+}
+
+.about-page.dark .about-values li {
+  background: #2c2c2c;
+  color: #ffd700;
+}
+
+/* Bouton WhatsApp */
+.about-contact {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 6px 16px rgba(18, 140, 126, 0.4);
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-intro {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .about-section {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 1rem;
+    max-width: 100%;
+  }
+
+  .about-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+  }
+
+  .about-values {
+    gap: 0.7rem;
+  }
+
+  .about-values li {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
+    max-width: 120px;
+  }
+
+  .about-contact {
+    margin-top: 2rem;
+  }
+}

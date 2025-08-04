@@ -1,0 +1,672 @@
+/* ===========================
+   NAVBAR GÉNÉRALE
+=========================== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 2px solid #e9ecef;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar.light {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.navbar.dark {
+  background-color: #1e293b;
+  color: #f8f9fa;
+  border-bottom: 2px solid #555;
+}
+
+/* ===========================
+   LOGO & ENTÊTE
+=========================== */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #017fd3, #2e2b19);
+  transition: transform 0.6s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.header h2 {
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+/* ===========================
+   MENU DE NAVIGATION
+=========================== */
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s;
+}
+
+.navbar ul li:hover {
+  background: linear-gradient(90deg, #ffd700, #ffc107);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+}
+
+/* ===========================
+   LIENS
+=========================== */
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffd700;
+}
+
+/* ===========================
+   BOUTON TOGGLE DARK/LIGHT
+=========================== */
+.toggle-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon:hover {
+  transform: rotate(20deg);
+}
+
+
+/* ===========================
+   BOUTON BURGER PERSONNALISÉ
+=========================== */
+.burger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-menu-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.custom-menu-icon:hover {
+  transform: scale(1.5);
+}
+/* Cacher le bouton burger par défaut */
+.burger.mobile-only {
+  display: none;
+}
+
+/* L'afficher uniquement sur les petits écrans */
+@media screen and (max-width: 768px) {
+  .burger.mobile-only {
+    display: flex;
+  }
+
+  /* Facultatif : cacher les liens nav sur mobile si sidebar est utilisée */
+  .navbar ul {
+    display: none;
+  }
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* <-- Centrer horizontalement */
+  }
+
+  .header {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le logo et titre */
+    gap: 10px;
+  }
+
+  .burger.mobile-only {
+    display: flex;
+    margin: 0 auto; /* Centre le bouton burger */
+  }
+
+  .toggle-icon {
+    margin: 0 auto; /* Centre le toggle */
+    display: block; /* Assure qu’il prenne toute la ligne */
+  }
+
+  .navbar ul {
+    display: none; /* Cache les liens sur mobile */
+  }
+}
