@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* Le variant dark: de Tailwind cible par défaut prefers-color-scheme ; notre
+   thème est piloté par l'attribut data-theme sur <html>, pas la préférence OS.
+   Sans cette ligne, toutes les classes dark:... étaient silencieusement
+   ignorées (cause du texte peu lisible en mode sombre). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --bg: #f5f2ec;
+  --bg-2: #efebe3;
+  --surface: #ffffff;
+  --surface-2: #fbf9f5;
+  --text: #0d1b2a;
+  --text-2: #3d4a57;
+  --muted: #6b7280;
+  --primary: #12324d;
+  --primary-2: #0b2236;
+  --accent: #c4a35a;
+  --accent-2: #a8863e;
+  --accent-soft: #f3e9d2;
+  --border: #e4ddd0;
+  --wa: #25d366;
+  --wa-dark: #1da851;
+}
+
+html[data-theme="dark"] {
+  --bg: #080b11;
+  --bg-2: #0c111a;
+  --surface: #121826;
+  --surface-2: #171f2e;
+  --text: #f3eee4;
+  --text-2: #c5cbd4;
+  --muted: #8b93a1;
+  --primary: #d4b76a;
+  --primary-2: #e4cb8a;
+  --accent: #d4b76a;
+  --accent-2: #e8d09a;
+  --accent-soft: #2a2418;
+  --border: #243044;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-text: var(--text);
+  --color-text-2: var(--text-2);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-2: var(--primary-2);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-soft: var(--accent-soft);
+  --color-border: var(--border);
+  --color-wa: var(--wa);
+  --color-wa-dark: var(--wa-dark);
+  --font-sans: var(--font-outfit);
+  --font-marketing: var(--font-poppins);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
